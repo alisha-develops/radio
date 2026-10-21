@@ -1,0 +1,35 @@
+.rect {
+    width: 300px;
+    height: 160px;
+    position:relative;
+    border: 2px grey solid;
+}
+
+.box {
+    border: 2px purple solid;
+    width: 180px;
+    height: 30px;
+    position: absolute;
+    top: 25px;
+    left: 60px;
+}
+
+.circle1 {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 30px;
+    left: 75px;
+    border: 2px rgb(255, 0, 242) solid;
+}
+
+.circle2 {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 30px;
+    left: 75px;
+    border: 2px rgb(197, 18, 182) solid;
+}
