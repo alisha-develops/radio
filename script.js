@@ -1,6 +1,7 @@
 const box = document.querySelector(".box");
 const play = document.getElementById("play");
 const next = document.getElementById("next");
+const title = document.querySelector(".title");
 const audio = new Audio();
 
 async function display() {
@@ -9,11 +10,11 @@ async function display() {
         const data = await response.json();
 
         audio.src = data.url;
-        box.textContent = data.name;
+        set(data.name);
         await audio.play();
     } catch (error) {
         console.log("error:", error);
-        box.textContent = "whoops! looks like signal is gone :O";
+        set("whoops! looks like signal is gone :O");
     }
 }
 
@@ -30,4 +31,12 @@ play.addEventListener("click", () => {
 next.addEventListener('click', display);
 audio.addEventListener('ended', display);
 
-box.textContent = "press play";
+set("press yellow circle");
+
+function set(text) {
+    title.textContent = text;
+    title.classList.remove("scrolling");
+    if (box.scrollWidth > box.clientWidth) {
+        title.classList.add("scrolling");
+    }
+}

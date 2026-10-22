@@ -27,16 +27,17 @@ body {
     left: 60px;
     border: 2px #171717 solid;
     border-radius: 50px;
-    background: #F4F0E8;
-    font-family: monospace;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
     box-sizing: border-box;
+    padding: 0 14px;
+    background: #251138;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.6);
+    color: #C4FF61;
+    line-height: 26px;
+    font-size: 0.8rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    white-space: nowrap;
     overflow: hidden;
 }
-
 
 .circle1 {
     width: 60px;
@@ -97,4 +98,19 @@ body {
 .circle1:active, 
 .circle2:active { 
     transform: scale(0.95); 
+}
+
+.title {
+    display: inline-block;
+}
+
+.title.scrolling {
+    padding-left: 100%;
+    animation: scroll 8s linear infinite;
+}
+
+@keyframes scroll {
+    to { 
+        transform: translateX(-100%); 
+    }
 }
