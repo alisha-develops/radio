@@ -1,25 +1,33 @@
-const song = document.querySelector('.box');
+const box = document.querySelector(".box");
+const play = document.getElementById("play");
+const next = document.getElementById("next");
+const audio = new Audio();
 
 async function display() {
     try {
-        const response = await fetch ('https://vision-board-mu.vercel.app/api/random');
+        const response = await fetch('https://vision-board-mu.vercel.app/api/random');
         const data = await response.json();
 
-        let displaytext = "playing track...";
-
-        if (data.text) {
-        displaytext = data.text;
-        } else if (data.title) {
-        displaytext = data.title;
-        } else if (data.goal) {
-        displaytext= data.goal;
-        }
-
-        song.textContent = displaytext;
+        audio.src = data.url;
+        box.textContent = data.name;
+        await audio.play();
     } catch (error) {
         console.log("error:", error);
-        song.textContent = "whoops! looks like signal is gone :O"
+        box.textContent = "whoops! looks like signal is gone :O";
     }
 }
 
-display();
+play.addEventListener("click", () => {
+    if (!audio.src) {
+        display();
+    } else if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+});
+
+next.addEventListener('click', display);
+audio.addEventListener('ended', display);
+
+box.textContent = "press play";
