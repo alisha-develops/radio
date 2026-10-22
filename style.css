@@ -75,3 +75,16 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.handle {
+    width: 120px;
+    height: 25px;
+    border: 6px #171717 solid;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    top: -25px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+}
