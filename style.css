@@ -1,9 +1,21 @@
+body {
+    background-color: #5a02ad;
+    background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .rect {
     border: 10px #171717 solid;
     width: 300px;
     height: 160px;
     position: relative;
+    border-radius: 50px;
     background-color: #C4FF61;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
 }
 
 
@@ -13,7 +25,8 @@
     position: absolute;
     top: 25px;
     left: 60px;
-    border: 3px #171717 solid;
+    border: 2px #171717 solid;
+    border-radius: 50px;
     background: #F4F0E8;
     font-family: monospace;
     font-size: 12px;
@@ -24,24 +37,41 @@
     overflow: hidden;
 }
 
+
 .circle1 {
-    width: 35px;
-    height: 35px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     position: absolute;
     bottom: 30px;
     left: 50px;
     border: 3px #171717 solid;
     background-color: #251138;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-tire.png");
+
 }
 
 .circle2 {
-    width: 35px;
-    height: 35px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     position: absolute;
     bottom: 30px;
     right: 50px;
     border: 3px #171717 solid;
     background-color: #251138;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-tire.png");
+
+}
+
+.circle3, .circle4 {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px #171717 solid;
+    background-color: #4d4941;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
